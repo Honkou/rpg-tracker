@@ -28,7 +28,7 @@ Global $ok8[17]
 Global $ok9[17]
 
 GUICreate("",1000,500)
-$r=GUICtrlCreateButton("Wyczysc kolumn�",750,100,200,30)
+$r=GUICtrlCreateButton("Wyczysc kolumnę",750,100,200,30)
 $ra=GUICtrlCreateButton("C",900,130,50,30)
 $ri=GUICtrlCreateButton("I",220,300,30,30)
 $r2=GUICtrlCreateButton("Wyczysc druzyny",750,180,200,60)
@@ -41,18 +41,18 @@ $reset = GUICtrlCreateButton("Reset",85,400,80,40)
 $wynik = GUICtrlCreateLabel("",120,385,40,12)
 $wynik1=GUICtrlCreateLabel("",120,370,40,12)
 $wynik2=GUICtrlCreateLabel("",120,355,40,12)
-$dalej = GUICtrlCreateButton("Nast�pna runda",300,400,100,40)
+$dalej = GUICtrlCreateButton("Następna runda",300,400,100,40)
 $zero = GUICtrlCreateButton("Od nowa",400,400,100,40)
 $czas=GUICtrlCreateLabel("Runda "&$rund,380,382,50,18)
-$naprzod=GUICtrlCreateButton("Dzie� nast�pny",530,400,100,40)
-$tyl=GUICtrlCreateButton("Dzie� poprzedni",630,400,100,40)
-$miesiac=GUICtrlCreateLabel("Miesi�c",610,360,100,20)
-$dzien=GUICtrlCreateLabel("Dzie�",610,380,80,20)
+$naprzod=GUICtrlCreateButton("Dzień następny",530,400,100,40)
+$tyl=GUICtrlCreateButton("Dzień poprzedni",630,400,100,40)
+$miesiac=GUICtrlCreateLabel("Miesiąc",610,360,100,20)
+$dzien=GUICtrlCreateLabel("Dzień",610,380,80,20)
 $c =GUICtrlCreateListView("Wybierz przeciwnika z listy",10,10,200,80)
-$c4=GUICtrlCreateListViewItem("�atwy",$c)
-$c5=GUICtrlCreateListViewItem("�redni",$c)
-$c6=GUICtrlCreateListViewItem("trudny",$c)
-$c7=GUICtrlCreateListViewItem("bardzo trudny",$c)
+$c4=GUICtrlCreateListViewItem("Łatwy",$c)
+$c5=GUICtrlCreateListViewItem("Średni",$c)
+$c6=GUICtrlCreateListViewItem("Trudny",$c)
+$c7=GUICtrlCreateListViewItem("Bardzo trudny",$c)
 $b=GUICtrlCreateListView("BN                                ",250,10,200,70)
 $b1=GUICtrlCreateListViewItem("Pierwszy",$b)
 $b2=GUICtrlCreateListViewItem("Drugi",$b)
@@ -257,7 +257,7 @@ $dni2=FileReadLine("kalendarz.txt",2)
 
 
 While $msg <> $GUI_EVENT_CLOSE                 ;start
-   
+
    $zr=15 + Random(1,15,1)
 $inicjatywa=$zr + Random(1,10,1)
 $ww=15 + Random(1,15,1)
@@ -288,7 +288,7 @@ $zyw=7+ Random(1,6,1)
    Case $oczy=1
 	  $oczyr="niebieskie oczy, "
    Case $oczy=2
-	  $oczyr="br�zowe oczy, "
+	  $oczyr="brązowe oczy, "
    Case $oczy=3
 	  $oczyr="czarne oczy, "
    Case $oczy=4
@@ -411,8 +411,8 @@ $zyw=7+ Random(1,6,1)
 Select
 
   Case $msg=$c4                                                   ;�atwy przeciwnik
-	 
-	 GUICtrlSetData($p1,"�atwy")
+
+	 GUICtrlSetData($p1,"Łatwy")
 	 GUICtrlSetData($p1a,$inicjatywa)
 	 GUICtrlSetData($p1b,$ww)
 	 GUICtrlSetData($p1c,$us)
@@ -424,9 +424,9 @@ Select
 	 GUICtrlSetData($p1i,$ogd)
 	 GUICtrlSetData($p1j,1)
 	 GUICtrlSetData($p1k,$zyw)
-   
-Case $msg=$c5                                                       ;�redni przeciwnik 
-   GUICtrlSetData($p1,"�redni")
+
+Case $msg=$c5                                                       ;�redni przeciwnik
+   GUICtrlSetData($p1,"Średni")
    GUICtrlSetData($p1a,$inicjatywa+15)
    GUICtrlSetData($p1b,$ww+15)
    GUICtrlSetData($p1c,$us+15)
@@ -438,7 +438,7 @@ Case $msg=$c5                                                       ;�redni pr
    GUICtrlSetData($p1i,$ogd+15)
    GUICtrlSetData($p1j,Random(1,2,1))
    GUICtrlSetData($p1k,$zyw+2)
-	 
+
   Case $msg=$c6                                                            ;trudny przeciwnik
 	 GUICtrlSetData($p1,"Trudny")
    GUICtrlSetData($p1a,$inicjatywa+30)
@@ -452,7 +452,7 @@ Case $msg=$c5                                                       ;�redni pr
    GUICtrlSetData($p1i,$ogd+30)
    GUICtrlSetData($p1j,Random(2,3,1))
    GUICtrlSetData($p1k,$zyw+5)
-	 
+
   Case $msg=$c7                                                             ;bardzo trudny przeciwnik
 	 GUICtrlSetData($p1,"Bardzo trudny")
    GUICtrlSetData($p1a,$inicjatywa+50)
@@ -466,10 +466,10 @@ Case $msg=$c5                                                       ;�redni pr
    GUICtrlSetData($p1i,$ogd+50)
    GUICtrlSetData($p1j,Random(2,4,1))
    GUICtrlSetData($p1k,$zyw+10)
-	 
+
   Case $msg=$l
-los()	 
-	
+los()
+
   Case $msg=$r                                ;pierwszy reset
 	 GUICtrlSetData($p1,"")
   GUICtrlSetData($p1a,"")
@@ -485,13 +485,13 @@ los()
   GUICtrlSetData($p1k,"")
   GUICtrlSetData($p1l,"")
 
-  
+
   Case $msg=$r2                             ;drugi reset
 	 czysc()
-	 
+
   Case $msg=$r3	                             ;zapis
 	 zapisz()
-	 
+
   Case $msg=$k1                    ;Krytyk Na �eb
 	 czysc()
 	 $a=0
@@ -510,7 +510,7 @@ los()
 	 $data[0]=1
 	 kalendarz()
 	 WEnd
-	 
+
   Case $msg=$k2                                    ;TAK
 	 czysc()
 	 $a=0
@@ -533,7 +533,7 @@ los()
 		$data[0]=2
 		kalendarz()
 		WEnd
-	
+
  Case $msg = $key10                                                    ;ko�ci
 	$w2=GUICtrlRead($wynik1)
 	GUICtrlSetData($wynik2,$w2)
@@ -550,42 +550,42 @@ Case $msg = $reset
 	  GUICtrlSetData($wynik,"")
 	  GUICtrlSetData($wynik1,"")
 	  GUICtrlSetData($wynik2,"")
-	  
+
    Case $msg=$b1                                                           ;BN
 	  $data1=1
 	  GUICtrlSetData($p2,$bn[17])
 	  For $a=1 To 17
 		 GUICtrlSetData($ok2[$a-1],$bn[$a-1])
 	  Next
-	  
+
    Case $msg=$b2
 	  $data1=2
 	  GUICtrlSetData($p2,$bn[35])
 	  For $a=1 To 17
 		 GUICtrlSetData($ok2[$a-1],$bn[$a+17])
 		 Next
-		 
-		 
+
+
 Case $msg=$r4
 		 zapbn()
-		 
+
 Case $msg=$ra
 		 GUICtrlSetData($p2,"")
 		 For $a=0 To 16
 			GUICtrlSetData($ok2[$a],"")
 		 Next
-		 
+
 Case $msg=$ri
 			inicjatywa()
 
 Case $msg=$dalej
    $rund=1+$rund
    GUICtrlSetData($czas,"Runda "&$rund)
-   
+
 Case $msg=$zero
    $rund=1
    GUICtrlSetData($czas,"Runda "&$rund)
-   
+
 Case $msg=$naprzod
    Select
    Case $data[0]=1
@@ -604,15 +604,15 @@ Case $msg=$tyl
    kalendarz()
    EndSelect
    WEnd
-   
-   
-   
-   
-   
-   
-   
+
+
+
+
+
+
+
    Func czysc ()
-		 
+
 	  $a=0
 	 While $a<17
   GUICtrlSetData($p3,"")
@@ -632,10 +632,10 @@ Case $msg=$tyl
   $a+=1
   WEnd
   $data[0]=0
-  GUICtrlSetData($miesiac,"Miesi�c")
-  GUICtrlSetData($dzien,"Dzie�")
+  GUICtrlSetData($miesiac,"Miesiąc")
+  GUICtrlSetData($dzien,"Dzień")
   EndFunc
-  
+
   Func zapisz()                                                                 ;zapisz
 	 Select
 	 Case $data[0]=1
@@ -650,7 +650,7 @@ Case $msg=$tyl
 	    $krytyk[53]=GUICtrlRead($p6)
 		$krytyk[71]=GUICtrlRead($p7)
 		$krytyk[89]=GUICtrlRead($p8)
-	   
+
 		Next
 	For $a=1 To 90
 		If $krytyk[$a-1]<>$krytyk1[$a-1] Then
@@ -663,8 +663,8 @@ Case $msg=$tyl
 	  _FileWriteToLine("krytyk.txt",72,$krytyk[71],1)
 	  _FileWriteToLine("krytyk.txt",90,$krytyk[89],1)
 	_FileWriteToLine("kalendarz.txt",1,$dni1,1)
-	
-	
+
+
  Case $data[0]=2
 	For $a=1 To 17
 	   $tak[$a-1]=GUICtrlRead($ok3[$a-1])
@@ -696,14 +696,14 @@ Case $msg=$tyl
 	  _FileWriteToLine("tak.txt",126,$tak[125],1)
 	_FileWriteToLine("kalendarz.txt",2,$dni2,1)
 	EndSelect
-	MsgBox(0,"","Dane zosta�y pomy�lnie zapisane")
+	MsgBox(0,"","Dane zostały pomyślnie zapisane")
  EndFunc
- 
+
  Func los()
 	MsgBox(0,"",$oczyr&$wlosyr&$wzrost&" cm, "&$wiek&" lat, "&$twarzr&$sylwetkar&$znakir)
  EndFunc
- 
- 
+
+
  Func zapbn()
 	Select
 	   Case $data1=1
@@ -781,59 +781,59 @@ Func kalendarz()
 	  Case $data[0]=1
    Select
    Case $dni1<34 And $dni1>0
-	  GUICtrlSetData($miesiac,"Powied�mie (1)")
-	  GUICtrlSetData($dzien,"Dzie� "& $dni1)
+	  GUICtrlSetData($miesiac,"Powiedźmie (1)")
+	  GUICtrlSetData($dzien,"Dzień "& $dni1)
    Case $dni1<67 And $dni1>=34
 	  GUICtrlSetData($miesiac,"Zmiana Roku (2)")
-	  GUICtrlSetData($dzien,"Dzie� "& $dni1-33)
+	  GUICtrlSetData($dzien,"Dzień "& $dni1-33)
    Case $dni1=67
 	  GUICtrlSetData($miesiac,"")
 	  GUICtrlSetData($dzien,"Rozkwitanie")
    Case $dni1<101 And $dni1>67
 	  GUICtrlSetData($miesiac,"Czas Orki (3)")
-	  GUICtrlSetData($dzien,"Dzie� "& $dni1-67)
+	  GUICtrlSetData($dzien,"Dzień "& $dni1-67)
    Case $dni1<134 And $dni1>=101
 	  GUICtrlSetData($miesiac,"Czas Sigmara (4)")
-	  GUICtrlSetData($dzien,"Dzie� "& $dni1-100)
+	  GUICtrlSetData($dzien,"Dzień "& $dni1-100)
    Case $dni1<167 And $dni1>=134
 	  GUICtrlSetData($miesiac,"Czas Lata (5)")
-	  GUICtrlSetData($dzien,"Dzie� "& $dni1-133)
+	  GUICtrlSetData($dzien,"Dzień "& $dni1-133)
    Case $dni1=167
 	  GUICtrlSetData($miesiac,"")
-	  GUICtrlSetData($dzien,"Dzie� S�o�ca")
+	  GUICtrlSetData($dzien,"Dzień Słońca")
    Case $dni1<201 And $dni1>167
-	  GUICtrlSetData($miesiac,"Przed Tajemnic� (6)")
-	  GUICtrlSetData($dzien,"Dzie� "&$dni1-167)
+	  GUICtrlSetData($miesiac,"Przed Tajemnicą (6)")
+	  GUICtrlSetData($dzien,"Dzień "&$dni1-167)
    Case $dni1=201
 	  GUICtrlSetData($miesiac,"")
 	  GUICtrlSetData($dzien,"Noc Tajemnicy")
    Case $dni1<234 And $dni1>201                                        ;32 dni
 	  GUICtrlSetData($miesiac,"Po Tajemnicy (7)")
-	  GUICtrlSetData($dzien,"Dzie� "&$dni1-201)
+	  GUICtrlSetData($dzien,"Dzień "&$dni1-201)
    Case $dni1<267 And $dni1>=234
-	  GUICtrlSetData($miesiac,"Czas Zbior�w (8)")
-	  GUICtrlSetData($dzien,"Dzie� "&$dni1-233)
+	  GUICtrlSetData($miesiac,"Czas Zbiorów (8)")
+	  GUICtrlSetData($dzien,"Dzień "&$dni1-233)
    Case $dni1=267
 	  GUICtrlSetData($miesiac,"")
 	  GUICtrlSetData($dzien,"Przekwitanie")
-   Case $dni1<301 And $dni1>267                            
+   Case $dni1<301 And $dni1>267
 	  GUICtrlSetData($miesiac,"Czas Warzenia (9)")
-	  GUICtrlSetData($dzien,"Dzie� "&$dni1-267)
+	  GUICtrlSetData($dzien,"Dzień "&$dni1-267)
    Case $dni1<333 And $dni1>=301
-	  GUICtrlSetData($miesiac,"Czas Mroz�w (10)")                     ;32 dni
-	  GUICtrlSetData($dzien,"Dzie� "&$dni1-300)
+	  GUICtrlSetData($miesiac,"Czas Mrozów (10)")                     ;32 dni
+	  GUICtrlSetData($dzien,"Dzień "&$dni1-300)
    Case $dni1<366 And $dni1>=333
 	  GUICtrlSetData($miesiac,"Czas Ulryka (11)")
-	  GUICtrlSetData($dzien,"Dzie� "&$dni1-332)
+	  GUICtrlSetData($dzien,"Dzień "&$dni1-332)
    Case $dni1=366
 	  GUICtrlSetData($miesiac,"")
-	  GUICtrlSetData($dzien,"U�pienie")
-   Case $dni1<400 And $dni1>366                                 
-	  GUICtrlSetData($miesiac,"Przedwied�mie (12)")
-	  GUICtrlSetData($dzien,"Dzie� "&$dni1-366)
+	  GUICtrlSetData($dzien,"Uśpienie")
+   Case $dni1<400 And $dni1>366
+	  GUICtrlSetData($miesiac,"Przedwiedźmie (12)")
+	  GUICtrlSetData($dzien,"Dzień "&$dni1-366)
    Case $dni1=400
 	  GUICtrlSetData($miesiac,"")
-	  GUICtrlSetData($dzien,"Noc Wied�m")
+	  GUICtrlSetData($dzien,"Noc Wiedźm")
    Case $dni1>400
 	  $dni1=1
 	  kalendarz()
@@ -841,63 +841,63 @@ Func kalendarz()
 	  $dni1=400
 	  kalendarz()
    EndSelect
-   
+
 Case $data[0]=2
    Select
    Case $dni2<34 And $dni2>0
-	  GUICtrlSetData($miesiac,"Powied�mie (1)")
-	  GUICtrlSetData($dzien,"Dzie� "& $dni2)
+	  GUICtrlSetData($miesiac,"Powiedźmie (1)")
+	  GUICtrlSetData($dzien,"Dzień "& $dni2)
    Case $dni2<67 And $dni2>=34
 	  GUICtrlSetData($miesiac,"Zmiana Roku (2)")
-	  GUICtrlSetData($dzien,"Dzie� "& $dni2-33)
+	  GUICtrlSetData($dzien,"Dzień "& $dni2-33)
    Case $dni2=67
 	  GUICtrlSetData($miesiac,"")
 	  GUICtrlSetData($dzien,"Rozkwitanie")
    Case $dni2<101 And $dni2>67
 	  GUICtrlSetData($miesiac,"Czas Orki (3)")
-	  GUICtrlSetData($dzien,"Dzie� "& $dni2-67)
+	  GUICtrlSetData($dzien,"Dzień "& $dni2-67)
    Case $dni2<134 And $dni2>=101
 	  GUICtrlSetData($miesiac,"Czas Sigmara (4)")
-	  GUICtrlSetData($dzien,"Dzie� "& $dni2-100)
+	  GUICtrlSetData($dzien,"Dzień "& $dni2-100)
    Case $dni2<167 And $dni2>=134
 	  GUICtrlSetData($miesiac,"Czas Lata (5)")
-	  GUICtrlSetData($dzien,"Dzie� "& $dni2-133)
+	  GUICtrlSetData($dzien,"Dzień "& $dni2-133)
    Case $dni2=167
 	  GUICtrlSetData($miesiac,"")
-	  GUICtrlSetData($dzien,"Dzie� S�o�ca")
+	  GUICtrlSetData($dzien,"Dzień Słońca")
    Case $dni2<201 And $dni2>167
-	  GUICtrlSetData($miesiac,"Przed Tajemnic� (6)")
-	  GUICtrlSetData($dzien,"Dzie� "&$dni2-167)
+	  GUICtrlSetData($miesiac,"Przed Tajemnicą (6)")
+	  GUICtrlSetData($dzien,"Dzień "&$dni2-167)
    Case $dni2=201
 	  GUICtrlSetData($miesiac,"")
 	  GUICtrlSetData($dzien,"Noc Tajemnicy")
    Case $dni2<234 And $dni2>201                                        ;32 dni
 	  GUICtrlSetData($miesiac,"Po Tajemnicy (7)")
-	  GUICtrlSetData($dzien,"Dzie� "&$dni2-201)
+	  GUICtrlSetData($dzien,"Dzień "&$dni2-201)
    Case $dni2<267 And $dni2>=234
-	  GUICtrlSetData($miesiac,"Czas Zbior�w (8)")
-	  GUICtrlSetData($dzien,"Dzie� "&$dni2-233)
+	  GUICtrlSetData($miesiac,"Czas Zbiorów (8)")
+	  GUICtrlSetData($dzien,"Dzień "&$dni2-233)
    Case $dni2=267
 	  GUICtrlSetData($miesiac,"")
 	  GUICtrlSetData($dzien,"Przekwitanie")
-   Case $dni2<301 And $dni2>267                            
+   Case $dni2<301 And $dni2>267
 	  GUICtrlSetData($miesiac,"Czas Warzenia (9)")
-	  GUICtrlSetData($dzien,"Dzie� "&$dni2-267)
+	  GUICtrlSetData($dzien,"Dzień "&$dni2-267)
    Case $dni2<333 And $dni2>=301
-	  GUICtrlSetData($miesiac,"Czas Mroz�w (10)")                     ;32 dni
-	  GUICtrlSetData($dzien,"Dzie� "&$dni2-300)
+	  GUICtrlSetData($miesiac,"Czas Mrozów (10)")                     ;32 dni
+	  GUICtrlSetData($dzien,"Dzień "&$dni2-300)
    Case $dni2<366 And $dni2>=333
 	  GUICtrlSetData($miesiac,"Czas Ulryka (11)")
-	  GUICtrlSetData($dzien,"Dzie� "&$dni2-332)
+	  GUICtrlSetData($dzien,"Dzień "&$dni2-332)
    Case $dni2=366
 	  GUICtrlSetData($miesiac,"")
-	  GUICtrlSetData($dzien,"U�pienie")
-   Case $dni2<400 And $dni2>366                                 
-	  GUICtrlSetData($miesiac,"Przedwied�mie (12)")
-	  GUICtrlSetData($dzien,"Dzie� "&$dni2-366)
+	  GUICtrlSetData($dzien,"Uśpienie")
+   Case $dni2<400 And $dni2>366
+	  GUICtrlSetData($miesiac,"Przedwiedźmie (12)")
+	  GUICtrlSetData($dzien,"Dzień "&$dni2-366)
    Case $dni2=400
 	  GUICtrlSetData($miesiac,"")
-	  GUICtrlSetData($dzien,"Noc Wied�m")
+	  GUICtrlSetData($dzien,"Noc Wiedźm")
    Case $dni2>400
 	  $dni2=1
 	  kalendarz()
